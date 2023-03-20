@@ -1,0 +1,49 @@
+<h1>New job</h1>
+<% byebug %>
+<%= form_with model: [current_user, @job] do |form| %>
+  <div>
+    <%= form.label :job_name %><br>
+    <%= form.text_field :job_name %>
+    <% @job.errors.full_messages_for(:job_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :experience %><br>
+    <%= form.text_area :experience %><br>
+    <% @job.errors.full_messages_for(:experience).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :opening %><br>
+    <%= form.text_area :opening %><br>
+    <% @job.errors.full_messages_for(:opening).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %><br>
+    <% @job.errors.full_messages_for(:location).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+<div>
+    <%= form.label :pakage %><br>
+    <%= form.text_area :pakage %><br>
+    <% @job.errors.full_messages_for(:pakage).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

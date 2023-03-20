@@ -1,0 +1,11 @@
+<h1><%= @company&.company_name %></h1>
+
+<p><%= @company&.description %></p>
+<p><%= @company&.location %></p>
+
+  <p>
+    <%= link_to "Destroy Company", [company.user, company], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  </p>

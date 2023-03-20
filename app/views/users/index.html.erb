@@ -1,0 +1,21 @@
+<% if user_signed_in? %> 
+ <div> Welcome <%= current_user.email %> </div> 
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>
+
+<h1>Naukrii.com!</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="<%= user_path(user) %>"> 
+      <%= user.full_name %>
+    </a>
+    </li>
+
+  <% end %>
+</ul>
+
+<%= link_to "New User", new_user_path %>

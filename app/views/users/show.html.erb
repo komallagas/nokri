@@ -1,0 +1,66 @@
+<h1><%= @user.full_name %></h1>
+
+<p><%= @user.address %></p>
+<p><%= @user.user_type %></p>
+<p><%= @user.mobile_no %></p>
+<p><%= @user.language %></p>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+  <li><%= link_to "Destroy", user_path(@user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+
+<h2>Add a educations:</h2>
+<%= form_with model: [ @user, @user.educations.build] do |form| %>
+  <p>
+    <%= form.label :Qualication %><br>
+    <%= form.text_field :Qualication %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<h2>Educations</h2>
+<% @user.educations.each do |education| %>
+  <p>
+    <strong>Qualication:</strong>
+    <%= education.Qualication %>
+  </p>
+<% end %>
+
+ <li><%= link_to "Edit", edit_user_education_path(@user) %></li>
+
+
+<h2>Add a skills:</h2>
+<%= form_with model: [ @user, @user.skills.build] do |form| %>
+  <p>
+    <%= form.label :skill_name %><br>
+    <%= form.text_field :skill_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+<h2>Skills</h2>
+<% @user.skills.each do |skill| %>
+  <p>
+    <strong>Skill_name:</strong>
+    <%= skill.skill_name %>
+  </p>
+
+  <p> 
+    <li><%= link_to "Destroy Skill", [skill.user, skill], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %></li>
+  </p>
+
+<% end %>

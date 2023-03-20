@@ -1,0 +1,11 @@
+<h2>Edit skills:</h2>
+
+<%= form_with model: [ @user, @user.skills.build] do |form| %>
+  <p>
+    <%= form.label :skill_name %><br>
+    <%= form.text_field :skill_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

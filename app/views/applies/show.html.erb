@@ -1,0 +1,14 @@
+<h1><%= @apply.company_name %></h1>
+
+<p><%= @apply.designation %></p>
+
+
+
+  <p>
+    <li><%= link_to "Destroy apply", [@apply.user, @apply], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %></li>
+  </p>
+
+  <%= link_to "New Apply", new_user_apply_path %>

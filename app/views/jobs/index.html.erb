@@ -1,0 +1,8 @@
+<h1>Job</h1>
+<ul>
+  <% @jobs.each do |jobs | %>
+    <li>
+      <%= link_to jobs.job_name %>
+    </li>
+  <% end %>
+</ul>

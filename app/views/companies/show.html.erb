@@ -1,0 +1,28 @@
+<% @company.each do |company| %>
+<h1>
+    <li>
+      <%= company.company_name %></h1><br>
+      <%= company.description %><br>
+      <%= company.location %><br>
+    </li>
+  <% end %>
+
+<ul>
+  <% @company[0].jobs.each do |job| %>
+    <li>
+      <%= job.job_name %>
+    </a>
+    </li>
+
+  <% end %>
+</ul>
+
+    <li><%= link_to "Destroy company", [@company[0].user, @company[0]], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %><li>
+ 
+
+ <%= link_to "New Company", new_user_company_url %>
+
+ 

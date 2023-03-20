@@ -1,0 +1,45 @@
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :full_name %><br>
+    <%= form.text_field :full_name %>
+    <% @user.errors.full_messages_for(:full_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %><br>
+    <% @user.errors.full_messages_for(:address).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :mobile_no %><br>
+    <%= form.text_area :mobile_no %><br>
+    <% @user.errors.full_messages_for(:mobile_no).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :language %><br>
+    <%= form.text_area :language %><br>
+    <% @user.errors.full_messages_for(:language).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :user_type %><br>
+    <%= form.text_area :user_type %><br>
+    <% @user.errors.full_messages_for(:user_type).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

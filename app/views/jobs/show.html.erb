@@ -1,0 +1,20 @@
+<% byebug %>
+<% @job.each do |job| %>
+<h1>
+    <li>
+      <%= job.job_name %></h1><br>
+      <%= job.experience %><br>
+      <%= job.opening %><br>
+      <%= job.location %><br>
+      <%= job.pakage %><br>
+    </li>
+  <% end %>
+
+<% byebug %>
+<p>
+    <li><%#= link_to "Destroy job", [@job.users, @job], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %><li>
+  </p>
+ 

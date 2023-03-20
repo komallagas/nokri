@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NaukriiCom</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light
+      navbar-inverse navbar-fixed-top mb-4"  style= "display: inline-flex;"  >
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <% if current_user %>
+         <img src= "assets/homepage.png" class="avatar float-left", width="60" height="60" />
+        <% end %>
+      <% end %>
+
+      <div>
+          <% if current_user %>
+          <img src= "assets/inbox.png" class="avatar float-left", width="40" height="50" />
+        <% end %>
+      </div>
+
+       <div>
+          <% if current_user %>
+          <img src= "assets/apply.png" class="avatar float-left", width="40" height="50" />
+        <% end %>
+      </div>
+
+    </nav>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+  </body>
+</html>
