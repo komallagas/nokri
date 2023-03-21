@@ -38,16 +38,13 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 			@user.destroy
 			redirect_to root_path, status: :see_other
-		  # if @user.destroy
-		 	# 	redirect_to @user 
-		  # else
-		 	# render :root_path, status: :see_other
-		 	# end
 	end
 
 	private
 	def user_params
-		params.require(:user).permit(:full_name, :address, :mobile_no, :email, :language, :user_type)
+		params.require(:user).permit(:full_name, :address, :mobile_no, :email, :language, :user_type,
+			skill_attributes: [:skill_name],
+			education_attributes: [:Qualication])
 	end
 	
 end

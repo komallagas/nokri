@@ -11,5 +11,7 @@ class User < ApplicationRecord
   has_many :applies 
   has_many :jobs, through: :applies
   has_many :skills
+  accepts_nested_attributes_for :skills
   has_many :educations
+  accepts_nested_attributes_for :educations
 end

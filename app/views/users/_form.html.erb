@@ -39,6 +39,14 @@
     <% end %>
   </div>
 
+
+ <div>
+  <% form.fields_for :skill do |f| %>
+    <%= f.label :skill_name %><br>
+    <%= f.text_area :skill_name %><br>
+  <% end %>
+ <div>
+
   <div>
     <%= form.submit %>
   </div>

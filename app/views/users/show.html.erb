@@ -14,8 +14,7 @@
                   } %></li>
 </ul>
 
-
-<h2>Add a educations:</h2>
+<!-- <h2>Add a educations:</h2>
 <%= form_with model: [ @user, @user.educations.build] do |form| %>
   <p>
     <%= form.label :Qualication %><br>
@@ -24,7 +23,7 @@
   <p>
     <%= form.submit %>
   </p>
-<% end %>
+<% end %> -->
 
 <h2>Educations</h2>
 <% @user.educations.each do |education| %>
@@ -37,7 +36,7 @@
  <li><%= link_to "Edit", edit_user_education_path(@user) %></li>
 
 
-<h2>Add a skills:</h2>
+<!-- <h2>Add a skills:</h2>
 <%= form_with model: [ @user, @user.skills.build] do |form| %>
   <p>
     <%= form.label :skill_name %><br>
@@ -46,7 +45,7 @@
   <p>
     <%= form.submit %>
   </p>
-<% end %>
+<% end %> -->
 
 
 <h2>Skills</h2>

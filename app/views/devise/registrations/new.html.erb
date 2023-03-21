@@ -1,6 +1,7 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%#= nested_form_for([resource_name, resource.with_skills], url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -45,7 +46,23 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <%# resource.skills.each do %>
+    <div class="field">
+      <%= f.fields_for :skills, resource.skills.build do |f1| %>
+        <%= f1.label :skill_name %><br>
+        <%= f1.text_area :skill_name %><br>
+      <% end %>
+    <div>
+  <%# end %>
 
+   <div class="field">
+      <%= f.fields_for :educations, resource.educations.build do |f1| %>
+        <%= f1.label :Qualication %><br>
+        <%= f1.text_area :Qualication %><br>
+      <% end %>
+    <div>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

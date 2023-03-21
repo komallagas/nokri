@@ -1,5 +1,6 @@
 class AppliesController < ApplicationController
 	def index
+		byebug
 		user = User.find_by(id: params[:user_id])
 		@applies = user.applies.all
 	end
@@ -13,18 +14,6 @@ class AppliesController < ApplicationController
 		user = User.find(params[:user_id])
 		@apply = Apply.new
 	end
-
-	# def create
-	# 	byebug
-	# 	@user = User.find(params[:user_id])
-	# 	@apply = Apply.new(apply_params)
-	# 	@apply.user = @user
-	# 	if @apply.save
-	# 		redirect_to  user_applies
-	# 	else
-	# 		render :new
-	# 	end
-	# end
 
 	def create
 		byebug
@@ -43,6 +32,6 @@ class AppliesController < ApplicationController
 
 	private
 	def apply_params
-		params.require(:apply).permit(:company_name,:designation, :job_id,:user_id)
+		params.require(:apply).permit(:company_name,:designation,:user_id)
 	end
 end
